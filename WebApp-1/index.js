@@ -10,6 +10,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get('/', function(req, res){
     fs.readdir('./files', function(err, files){
+        files = files.filter(file => file !== '.gitkeep');
         res.render("index", {files: files});
     })
 });
