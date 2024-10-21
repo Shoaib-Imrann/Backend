@@ -23,3 +23,6 @@ Built with **Express.js**, **EJS** for templating, and **Tailwind CSS**. You cre
     ```
 
     Open [http://localhost:3000](http://localhost:3000)
+
+
+    ![GIF](./tasks.gif)
