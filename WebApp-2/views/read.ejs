@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d08eb68b34.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="h-screen w-full bg-zinc-900 px-10 py-5">
+      <a href="/" class="text-blue-500"
+        ><i class="fa-solid fa-chevron-left" style="color: #3b82f6"></i> Go
+        Back</a
+      >
+      <div class="flex text-white flex-col justify-center items-center">
+        <h1
+          class="text-3xl flex justify-start text-zinc-400 items-center cursor-not-allowed mt-5"
+        >
+          ALL USERS
+        </h1>
+        <div
+          class="w-full py-5 flex flex-wrap gap-3 justify-center items-center mt-5"
+        >
+          <% if(users.length>0){ %> <% users.forEach(function(user){ %>
+          <div class="w-[280px] bg-zinc-800 rounded-md p-4">
+            <div class="bg-zinc-700 w-full h-[230px] rounded-md items-center">
+              <img
+                class="object-cover w-full h-full rounded-sm"
+                src="<%= user.image %>"
+              />
+            </div>
+            <div class="p-3">
+              <p class="text-lg uppercase"><%= user.name %></p>
+              <p class="text-zinc-500"><%= user.email %></p>
+            </div>
+            <div class="flex justify-between m-3">
+              <a href="/edit/<%= user._id %>" class="text-zinc-500"
+                ><i
+                  class="fa-solid fa-pen-to-square fa-lg"
+                  style="color: #3b82f6"
+                ></i
+              ></a>
+              <a href="/delete/<%= user._id %>" class="text-red-700"
+                ><i
+                  class="fa-solid fa-trash-can fa-lg"
+                  style="color: #c53030"
+                ></i
+              ></a>
+            </div>
+          </div>
+
+          <% }) %> <% } else { %>
+          <h3 class="text-zinc-700 mt-20">No Users Yet</h3>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

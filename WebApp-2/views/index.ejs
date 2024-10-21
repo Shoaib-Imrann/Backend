@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="h-screen w-full bg-zinc-900 flex flex-col justify-center items-center text-white">
+        <h1 class="text-3xl flex justify-center text-white/40 items-center cursor-not-allowed">CREATE USER</h1>
+        <div class="w-[400px] h-[400px] p-5">
+            
+            <div class="flex flex-col mt-8 items-center h-full">
+        <form action="/create" method="post" class="flex flex-col w-full">
+            <input class="px-5 py-3 bg-transparent mb-2 border-[1px] border-zinc-700 rounded-md" name="name" placeholder="Name" required >
+            <input class="px-5 py-3 bg-transparent mb-2 border-[1px] border-zinc-700 rounded-md" name="email" type="email" placeholder="Email" required>
+            <input class="px-5 py-3 bg-transparent mb-3 border-[1px] border-zinc-700 rounded-md" name="image"  placeholder="Image url" required>
+            <div class="flex justify-end">
+            <input class="px-5 py-3 rounded-md bg-green-500 text-lg cursor-pointer hover:bg-green-600 w-1/3" type="submit" value="Create">
+        </div>
+            <a href="/read" class="px-5 py-3 rounded-md bg-blue-500 mt-14 text-lg cursor-pointer hover:bg-blue-600 flex justify-center items-center">Read All</a>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

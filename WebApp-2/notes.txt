@@ -1,0 +1,16 @@
+mongodb installation -> npm i mongoose
+mongodb connection ->
+schema
+model
+CRUD
+
+
+
+Database -> Collections -> Document 
+
+
+CODE        DATABASE
+-------------------------
+mongoose.connect -> database create
+model create     -> Collections
+CREATE code      -> document
