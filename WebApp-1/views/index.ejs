@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d08eb68b34.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 sm:h-screen">
+      <div class="flex flex-col justify-center items-center w-full">
+        <div class="p-5 mt-16 text-white/30 text-4xl">
+          <h1>Express.js</h1>
+        </div>
+        <div
+          class="form p-10 flex justify-center items-center w-[400px] sm:w-[720px] mt-5"
+        >
+          <form action="/create" method="post" class="w-full">
+            <input
+              class="block w-full px-5 py-2 bg-zinc-800 rounded-sm text-white"
+              type="text"
+              placeholder="Your title"
+              name="title"
+              required
+            />
+            <textarea
+              class="block px-5 mt-2 pt-2 pb-24 bg-zinc-800 resize-none w-full rounded-sm text-white"
+              placeholder="Description"
+              name="description"
+              required
+            ></textarea>
+            <div class="flex justify-end">
+              <input
+                class="mt-2 px-5 py-2 bg-blue-600 font-semibold text-white rounded-sm cursor-pointer hover:bg-blue-500"
+                type="submit"
+                value="CREATE"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+      <div
+        class="tasks px-5 py-10 sm:px-16 flex justify-center sm:justify-start gap-5 flex-wrap"
+      >
+        <% if(files.length > 0){ %> <% files.forEach(function(val){ %>
+        <div
+          class="task min-w-[320px] sm:min-w-[250px] p-5 rounded-sm bg-zinc-800"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-white text-xl tracking-tighter"><%= val %></h1>
+            <a class="text-zinc-600" href="/edit/<%= val%>">Edit</a>
+          </div>
+          <div class="flex justify-between items-center w-full mt-10">
+            <a
+              class="text-blue-500 inline-block underline"
+              href="/file/<%= val %>"
+              ><i class="fa-brands fa-readme fa-fade fa-lg underline" style="color: #3B82F6;"></i></a
+            >
+            <form action="/delete" method="post" style="display: inline-block">
+                <input type="hidden" name="filename" value="<%= val %>" />
+                <button type="submit" class="text-red-600 cursor-pointer">
+                  <i class="fa-solid  fa-trash-can"></i>
+                </button>
+              </form>
+          </div>
+        </div>
+        <% }) %> <% } else { %>
+        <h3 class="flex justify-center items-center w-full mt-20 text-zinc-600">
+          No Tasks Yet!
+        </h3>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

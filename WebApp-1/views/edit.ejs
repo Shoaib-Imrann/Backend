@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasks</title>
+    <link rel="stylesheet" href="/public/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d08eb68b34.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 sm:h-screen p-10">
+      <a href="/" class="text-blue-500 hover:text-blue-600"
+        ><i class="fa-solid fa-chevron-left" style="color: #3b82f6"></i> Go
+        Back</a
+      >
+      <form
+        action="/edit"
+        method="post"
+        class="mt-28 flex flex-col gap-3 w-[320px]"
+      >
+        <input
+          class="block w-full px-5 py-2 bg-zinc-800 text-zinc-600 rounded-sm text-white"
+          type="text"
+          placeholder="Previous name"
+          name="previous"
+          value="<%= filename %>"
+          required
+        />
+        <input
+          class="block w-full px-5 py-2 bg-zinc-800 rounded-sm text-white"
+          type="text"
+          placeholder="New name"
+          name="new"
+          required
+        />
+        <div class="flex justify-start">
+          <input
+            class="mt-5 px-5 py-2 w-full bg-yellow-700 font-semibold text-white rounded-sm cursor-pointer hover:bg-yellow-800"
+            type="submit"
+            value="UPDATE"
+          />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
