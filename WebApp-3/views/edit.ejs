@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d08eb68b34.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="w-full bg-zinc-900 min-h-screen text-white md:p-10 flex flex-col justify-start items-center"
+    >
+      <div class="w-[300px] md:w-[700px] h-full mt-10">
+        <div class="flex justify-end w-full mb-10"></div>
+        <h3>Edit the post</h3>
+        <form action="/update/<%=post._id%>" method="post">
+          <textarea
+            class="overflow-hidden bg-transparent border-2 border-zinc-800 h-28 w-full p-3 outline-none mt-3 mb-1 rounded-md"
+            name="data"
+            required
+          >
+<%= post.data %></textarea
+          >
+          <input
+            type="submit"
+            class="py-2 w-40 text-lg mt-1 bg-yellow-500 rounded-md px-3 cursor-pointer hover:bg-yellow-600 text-black"
+            value="Update"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

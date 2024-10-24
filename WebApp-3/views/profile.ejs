@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/d08eb68b34.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      class="w-full bg-zinc-900 min-h-screen text-white md:p-10 flex flex-col justify-start items-center"
+    >
+      <div class="w-[300px] md:w-[700px] h-full mb-10">
+        <div class="flex justify-end w-full mb-10">
+          <a
+            href="/logout"
+            class="py-2 mt-5 bg-red-500 rounded-md px-4 cursor-pointer hover:bg-red-600 flex justify-center"
+            >Logout</a
+          >
+        </div>
+        <div class="flex gap-3 mt-20">
+          <div class="w-10 h-10 rounded-full overflow-hidden">
+            <img
+              class="w-full h-full object-cover"
+              src="/images/uploads/<%= user.profilepic %>"
+            />
+          </div>
+          <h3 class="text-3xl">
+            <span class="text-zinc-400">Hello, </span><%= user.name %> 👋🏻
+          </h3>
+        </div>
+        <form action="/post" method="post">
+          <textarea
+            class="overflow-hidden bg-transparent border-2 border-zinc-800 h-28 w-full p-3 outline-none mt-5 mb-1 rounded-md"
+            placeholder="What's on your mind ?"
+            name="data"
+            required
+          ></textarea>
+          <input
+            type="submit"
+            class="py-2 w-40 text-lg mt-1 bg-blue-500 rounded-md px-3 cursor-pointer hover:bg-blue-600"
+            value="Create a post"
+          />
+        </form>
+        <div class="mt-20">
+          <h3 class="text-zinc-400">Your Posts</h3>
+          <div class="mt-5">
+            <% if(user.posts.length > 0) { %> <%
+            user.posts.reverse().forEach(function(post){ %>
+            <div
+              class="bg-zinc-800 border-[1px] border-zinc-700 rounded-md p-5 mb-3"
+            >
+              <div class="flex justify-between w-full items-center">
+                <div class="flex justify-center items-center gap-1">
+                  <div class="w-5 h-5 rounded-full overflow-hidden">
+                    <img
+                      class="w-full h-full object-cover"
+                      src="/images/uploads/<%= user.profilepic %>"
+                    />
+                  </div>
+                  <h4 class="text-blue-500">@<%= user.username %></h4>
+                </div>
+                <a href="/edit/<%= post._id %>" class="text-zinc-500 mr-3"
+                  ><i
+                    class="fa-solid fa-pen-to-square"
+                    style="color: #3b82f6"
+                  ></i
+                ></a>
+              </div>
+              <p class="mt-4 overflow-hidden"><%= post.data %></p>
+              <div class="pt-6 flex w-full justify-between items-center">
+                <div class="flex gap-3 items-center">
+                  <!-- <p class="ml-2"><%= post.likes.length%></p>
+                        <a href="/like/<%= post._id %>">
+                            <%= post.likes.indexOf(user._id) === -1 ? "Like" : "Unlike" %>
+                        </a> -->
+                  <i class="fa-regular fa-comment"></i>
+                </div>
+                <form
+                  action="/delete/<%= post._id %>"
+                  method="post"
+                  style="display: inline"
+                >
+                  <button
+                    type="submit"
+                    class="fa-solid fa-trash-can mr-3 cursor-pointer"
+                    style="color: #ef4444"
+                  ></button>
+                </form>
+              </div>
+            </div>
+            <% }) %> <% } else { %>
+            <h3 class="text-zinc-400 flex justify-center mt-20">
+              No posts yet...
+            </h3>
+            <% }%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

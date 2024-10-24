@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="favicon.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="bg-zinc-900 flex justify-center items-center">
+      <div
+        class="min-h-screen text-white p-10 flex flex-col md:flex-row w-[900px] justify-center gap-5 md:justify-between items-center h-full"
+      >
+        <div class="flex flex-col justify-center items-center">
+          <h3 class="text-3xl mb-14 text-zinc-400">Upload Picture</h3>
+          <form
+            autocomplete="off"
+            action="/upload"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div
+              class="flex flex-col gap-3 w-[350px] justify-center items-center"
+            >
+              <input type="file" name="image" class="cursor-pointer" required />
+              <input
+                class="px-5 py-2 rounded-md bg-green-500 w-full mt-10 text-lg cursor-pointer hover:bg-green-600"
+                type="submit"
+                value="Upload"
+              />
+            </div>
+          </form>
+        </div>
+        <div>
+          <p class="text-zinc-400 my-10">OR</p>
+        </div>
+        <div>
+          <a
+            href="/profile"
+            class="px-5 py-2 rounded-md flex justify-center items-center bg-blue-500 w-[300px] text-lg cursor-pointer hover:bg-blue-600"
+            >Skip</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
