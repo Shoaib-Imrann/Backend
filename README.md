@@ -1,7 +1,7 @@
-## WebApps are built using - <br>
-`Node.js`, **Express.js**, **MongoDB**, **JWT (JSON Web Tokens)**, **bcrypt**, **Multer**, and **Tailwind CSS**.
+## Technologies: <br>
+`Node.js` `Express.js` `MongoDB` `JWT (JSON Web Tokens)` `bcrypt` `Multer` `Tailwind CSS`
 
-## To View It on Your Machine
+## Getting Started
 
 1. **Clone the Repository**
    
