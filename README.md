@@ -1,5 +1,5 @@
 ## Technologies: <br>
-`Node.js` `Express.js` `MongoDB` `JWT (JSON Web Tokens)` `bcrypt` `Multer` `Tailwind CSS`
+`Node.js` `Express.js` `MongoDB` `JWT` `bcrypt` `Multer` `Tailwind CSS`
 
 ## Getting Started
 
