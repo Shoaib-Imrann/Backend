@@ -5,4 +5,4 @@ Can create, view, edit, and delete tasks, where each task is stored as a text fi
 
 
 
-    ![GIF](./tasks.gif)
+![GIF](./tasks.gif)
