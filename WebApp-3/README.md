@@ -1,5 +1,12 @@
 # Social Post
-server-side rendering with **Node.js**, **Express.js**, **MongoDB**, **JWT**, **bcrypt**, **Multer** and **Tailwind CSS**.
+server-side rendering with - <br>
+**Node.js** <br>
+**Express.js** <br>
+**MongoDB** <br>
+**JWT** <br>
+**bcrypt** <br>
+**Multer** <br>
+**Tailwind CSS** <br>
 
 
 ![GIF](./social.gif)
