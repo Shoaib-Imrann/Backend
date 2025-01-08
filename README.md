@@ -1,5 +1,6 @@
 ## Technologies: <br>
 `Node.js` `Express.js` `MongoDB` `JWT` `bcrypt` `Multer` `Tailwind CSS`
+The projects in this repo heavily use EJS to visualize how the backend works.
 
 ## Getting Started
 
